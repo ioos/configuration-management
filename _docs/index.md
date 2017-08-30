@@ -1,5 +1,5 @@
 ---
-title: Introduction to Guidelines for IOOS SOS 1.0
+title: IOOS DMAC Configuration Management
 keywords: sample homepage
 tags: [getting_started]
 #sidebar: home_sidebar
@@ -7,31 +7,34 @@ sidebar: mydoc_sidebar
 topnav: topnav
 toc: false
 #permalink: index.html
-summary: This brief description summarizes the content of the Guidelines. The other topics on this site provide additional information and detail about working with all aspects of the IOOS SOS 1.0.
+summary: A set of documents that describes IOOS DMAC CM Process, CM Plan, and CM Artifacts required for identification, documentation, and control of system elements by recording and reporting change processing and implementation status. 
 ---
 
-## IOOS SOS Application Profile
+<!--   
+* TOC
+{:toc}
+ -->
 
-U.S. IOOS distributes ocean observations using the OGC Sensor Observation Service. To support this effort U.S. IOOS has developed a profile of SOS v1.0 (henceforth IOOS SOS v1.0) that includes specific behaviors for the SOS interface and for the output formats delivered in response to the three operations of the SOS Core Profile.
-The GitHub repository contains documentation of the IOOS SOS v1.0 profile, example templates for the responses, and information on two reference implementations developed to support the IOOS SOS v1.0 profile. To facilitate the practical implementation of the SOS, IOOS has developed the IOOS Application Profile (AP) for SOS, which includes a series of operation templates, controlled vocabularies, IOOS Conventions for SOS Implementation, and a set of tests for IOOS SOS implementations.
 
-### IOOS SOS 1.0 WSDD
+## [**Configuration Management Process**{: style="color: crimson"}](./change-management.html)
 
-The Web Service Description Document (WSDD) provides a description of a Sensor Observation Service (SOS) that has been developed by U.S. IOOS for deployment by NOAA data providers and IOOS Regional Associations (RAs). This service provides a service consumer with the capability to access ocean observations data products, such as time series and profiles, which have XML-based encodings and included in the SWE Common Data Model.
+CM is defined as the systems engineering process for establishing and maintaining consistency of a product's performance, functional and physical attributes with its requirements, design and operational information throughout its life. These activities assist in verifying compliance with specified system requirements as well as establishing and maintaining the technical integrity of a system throughout its life cycle.  The successful implementation of CM activities results in an established and documented system baseline, effective management and tracking of changes made to system parts and related documentation (version control), and effective risk management.
 
-### IOOS SOS 1.0 Templates
+## [**Configuration Management Plan**{: style="color: crimson"}](./config-management-plan.html)
 
- * GetCapabilities: A template for generic (independent of feature type) GetCapabilities response.
- * DescribeSensor-Network: A template for generic (independent of feature type) SensorML DescribeSensor response (network of stations)
- * DescribeSensor-Station: A template for generic (independent of feature type) SensorML DescribeSensor response (single station)
- * OM GetObservation: A template for a generic (independent of feature type) GetObservation response (the result block in this template is empty; see SWE templates for guidance on the result block)
-* SWE-SingleStation-SingleProperty-TimeSeries: A template for SWE Data Record’s static and dynamic fields (single station with a single sensor)
- * SWE-SingleStation-TimeSeriesProfile: A template for SWE Data Record’s static and dynamic fields (a station with profiling sensors)
- * SWE-SingleStation-TimeSeriesProfile-QC: A template for SWE Data Record’s static and dynamic fields (a station with profiling sensors including quality elements for some quantities)
- * SWE-MultiStation-TimeSeries: A template for SWE Data Record’s static and dynamic fields (multiple stations with a variety of sensors)
- * SWE-MultiStation-TimeSeries-QC: A template for SWE Data Record’s static and dynamic fields (multiple stations with a variety of sensors including quality elements for some quantities)
+Based on the United States Office of Management and Budget (OMB) circular A-130 and other Federal laws and regulations, a CM process must be developed and documented in a CM Plan for all major applications and components of the developed systems. Developing a CM Plan is critical for implementing CM and ensures the following:
 
-### IOOS SOS 1.0 Compliance and Interoperability Tests
+* _**Changes to the configuration are identified and evaluated to determine the impact to the system before implementation.**_
 
-This document describes a collection of tests that have to be run in order to ensure a required level of compliance with IOOS SOS Profile 1.0 (IOOS Convention), and official OGC SOS 1.0.0 specification.
+Any changes made to the system are documented and tracked.  Because each change is tracked from initial system development through completion, a thorough history of changes is created for that system.  For example, the IOOS RA THREDDS Catalog running on a THREDDS Server (TDS) may require an upgrade to a more recent version of TDS because of existing vulnerabilities in the older version.  Upgrading to the more recent version of TDS will change the RA’s configuration.  The need for a version upgrade is a configuration change that must be thoroughly analyzed, since it may affect security, system performance, and functionality.  This change should be documented in a formal process to provide a historical representation of one of the changes occurring throughout the system development life cycle (SDLC).
+
+* _**Configuration is documented ensuring that version control is maintained.  Upgrades and additions are easily implemented because of relevant controls in a formal CM process.**_
+
+The DMAC documentation includes information on the system specification and configuration design, ensuring that, as part of the CM Plan, system documentation can be checked to verify whether the designed configuration allows the system to achieve its objective.  For example, if the IOOS Catalog design needs to be modified to implement a password for users, it could be determined that this change will be included in a later version. 
+
+* _**The configuration is verified against the initial baseline ensuring that all changes have been maintained and documented for any new parties involved in the CM process.**_
+
+Information on the DMAC systems, including the software types and versions, is recorded and tracked, ensuring access to the most recent system information.
+
+A CM Plan includes and addresses CM roles and responsibilities, communications, system configuration baseline, configuration control process, and CM resources. 
 
